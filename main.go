@@ -3,12 +3,19 @@
 package main
 
 import (
-	"github.com/cloudwego/hertz/pkg/app/server"
+	"flag"
+	"github.com/siddontang/go/log"
+	"hertz/demo/global"
 )
 
 func main() {
-	h := server.Default()
+	var env, configDir string
+	flag.StringVar(&env, "env", "dev", "config env name")
+	flag.StringVar(&configDir, "config_dir", "./common/config", "config file dir")
+	flag.Parse()
+	log.Infof("gpark_mms starting... env: %s, config_dir: %s", env, configDir)
 
-	register(h)
-	h.Spin()
+	global.Init(env, configDir)
+
+	hertzRun()
 }

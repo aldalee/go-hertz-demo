@@ -1,0 +1,12 @@
+{
+  "gpark_model": {
+    "addr": "192.168.160.228:6379",
+    "password": "",
+    "poolSize": 5,
+    "dialTimeout": 10000,
+    "readTimeout": 20000,
+    "writeTimeout": 20000,
+    "minIdleConns": 2,
+    "db": 0
+  }
+}

@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/cloudwego/hertz/pkg/app"
-	log "github.com/cloudwego/hertz/pkg/common/hlog"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	"github.com/go-playground/validator/v10"
+	"github.com/siddontang/go/log"
 	"net/http"
 	"time"
 )
@@ -60,6 +60,7 @@ var validFields = map[string]bool{
 	"last_train_time": true,
 }
 
+// UpdateModel 更新模型
 func UpdateModel(_ context.Context, c *app.RequestContext) {
 	log.Info("start update model...")
 
