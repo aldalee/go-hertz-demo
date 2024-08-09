@@ -7,15 +7,8 @@ import (
 )
 
 func Load(config interface{}, name, env, configDir string) error {
-	var fileName string
-	if env != "" {
-		fileName = fmt.Sprintf("%s.%s.json", name, env)
-	} else {
-		fileName = fmt.Sprintf("%s.json", name)
-	}
-
-	filePath := configDir
-	filePath = filePath + "/" + fileName
+	fileName := fmt.Sprintf("%s.%s.json", name, env)
+	filePath := fmt.Sprintf("%s/%s", configDir, fileName)
 	raw, err := os.ReadFile(filePath)
 	if err != nil {
 		return err

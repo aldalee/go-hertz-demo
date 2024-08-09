@@ -3,19 +3,11 @@
 package main
 
 import (
-	"flag"
-	"github.com/siddontang/go/log"
 	"hertz/demo/global"
 )
 
 func main() {
-	var env, configDir string
-	flag.StringVar(&env, "env", "dev", "config env name")
-	flag.StringVar(&configDir, "config_dir", "./common/config", "config file dir")
-	flag.Parse()
-	log.Infof("gpark_mms starting... env: %s, config_dir: %s", env, configDir)
-
-	global.Init(env, configDir)
+	global.Init()
 
 	hertzRun()
 }
